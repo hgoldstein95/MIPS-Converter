@@ -26,4 +26,4 @@ The output, consisting of 16-bit binary strings, takes two forms.
 | OP    | RS   |  RT | IMM |
 
 ## Disclaimer
-This is simply a test tool I threw together for one of my classes. I make no guarantees that it does not have bugs. Also, this has **not** been tested with BRANCH operations yet.
+This is simply a test tool I threw together for one of my classes. I make no guarantees that it does not have bugs.

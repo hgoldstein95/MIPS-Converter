@@ -1,6 +1,6 @@
 typeR = ['ADD', 'SUB', 'SRA', 'SRL', 'SLL', 'AND', 'OR', 'HALT']
 typeI = ['NOP', 'LB', 'SB', 'ADDI', 'ANDI', 'ORI', 
-		'BEQ', 'BNE', 'BGEZ', 'BGLTZ']
+		'BEQ', 'BNE', 'BGEZ', 'BLTZ']
 
 def regToCode(reg)
 	return reg.gsub(/R/, '').to_i.to_bin(3)
@@ -144,20 +144,20 @@ commands.each do |cmd|
 				imm = cmd[3].to_i.to_bin(6)
 			when 'BEQ'
 				op = '1000'
-				rs = regToCode(cmd[2])
-				rt = regToCode(cmd[1])
+				rt = regToCode(cmd[2])
+				rs = regToCode(cmd[1])
 				imm = cmd[3].to_i.to_bin(6)
 			when 'BNE'
 				op = '1001'
-				rs = regToCode(cmd[2])
-				rt = regToCode(cmd[1])
+				rt = regToCode(cmd[2])
+				rs = regToCode(cmd[1])
 				imm = cmd[3].to_i.to_bin(6)
 			when 'BGEZ'
 				op = '1010'
 				rs = regToCode(cmd[1])
 				rt = '000'
 				imm = cmd[2].to_i.to_bin(6)
-			when 'BGLTZ'
+			when 'BLTZ'
 				op = '1011'
 				rs = regToCode(cmd[1])
 				rt = '000'
